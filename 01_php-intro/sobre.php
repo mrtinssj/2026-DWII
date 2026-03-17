@@ -1,35 +1,29 @@
 <?php
 $nome = "Joice Martins";
+$profissao = "Estudante de Tecnologia";
+$curso = "Técnico em Informática - IFPR";
 $pagina_atual = "sobre";
+
+include '../includes/cabecalho.php';
+include '../includes/nav.php';
 ?>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - <?php echo $nome; ?></title>
+<section class="hero">
+    <h1><?php echo $nome; ?></h1>
+    <p><?php echo $profissao; ?> — <?php echo $curso; ?></p>
+</section>
 
-</head>
-<body style="font-family: Arial, sans-serif; margin: 0; background: #f3f4f6;">
+<main class="container">
+    <h2>Sobre mim</h2>
+
+    <p>Sou Joice Martins, estudante do curso Técnico em Informática no IFPR. Minha jornada na tecnologia começou dentro da escola, mas foi além da sala de aula que comecei a me interessar de verdade pelo que dá pra criar com programação.</p>
+
+<p>Hoje, venho construindo minha base em desenvolvimento web, trabalhando com HTML, CSS, PHP e lógica de programação. Mais do que aprender códigos, busco entender como as coisas funcionam por trás e como transformar ideias em algo que realmente funcione na prática.</p>
+
+<p>O que mais me motiva é justamente essa possibilidade de criar, testar e evoluir. Quero continuar me desenvolvendo na área, aprendendo novas tecnologias e explorando diferentes formas de construir soluções digitais.</p>
+
+<p>Fora da parte técnica, também gosto de tirar ideias do papel, desenvolver projetos próprios e estar sempre aprendendo algo novo que me ajude a crescer, tanto pessoal quanto profissionalmente.</p>
     
-    <?php include 'includes/cabecalho.php' ?>
+</main>
 
-<div style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
-    <h1 style="color: #3b579d;"> Sobre mim</h1>
-    <p>Olá! Sou <strong><?php echo $nome; ?></strong>, estudante de Tecnico em Informatica
-no IFPR de Ponta Grossa.</p>
-<p>
-    Oi, eu sou a Joice! Trabalho como gestora, social media e videomaker, e estou me aprofundando no mundo do tráfego pago para entender de verdade como criar campanhas que realmente funcionam. 
-    Adoro transformar ideias em conteúdos visuais que chamam atenção e contam histórias de um jeito envolvente. 
-    Fora do trabalho, a música está sempre comigo — sou super eclética e posso passar do pop ao rock, do eletrônico ao samba, dependendo do momento e do humor. 
-    Para mim, música não é só trilha sonora, é combustível criativo que inspira tanto os meus projetos quanto o meu dia a dia.
-</p>
-<a> href="index.php"
-    style="color: #3b579d; font-weight: bold;"> <- Voltar ao inicio</a>
-</div>
-
-<?php include 'includes/rodape.php' ?>
-
-</body>
-</html>
+<?php include '../includes/rodape.php'; ?>
