@@ -14,11 +14,11 @@ $charset = 'utf8mb4'; // Suporta emojis e caracteres especiais
 
 // DSN Data Source Name: string que identifica o banco para o PDO
 // sslmode=disabled: comunicação entre containers não usa SSL
-$dsn "mysql:host=$host;dbname=$db;charset=$charset; sslmode=disabled";
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
 // Opções de configuração do PDO
 $opcoes = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE EXCEPTION, // Erros SQL viram exceções
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Erros SQL viram exceções
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // Resultado como array associativo
     PDO::ATTR_EMULATE_PREPARES => false,
 // Prepared statements reais no banco

@@ -1,10 +1,11 @@
-create table tecnologias (
-    -> id INT auto_increment primary key,
-    -> nome varchar(100) not null,
-    -> categoria varchar(50) not null,
-    -> descricao text,
-    -> ano_criacao int,
-    -> criado_em timestamp default current_timestamp);
+CREATE TABLE tecnologias (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100),
+  categoria VARCHAR(50),
+  descricao TEXT,
+  ano_criacao INT,
+  criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 INSERT INTO tecnologias (nome, categoria, descricao, ano_criacao) VALUES
     -> ('HTML',       'Frontend',  'Linguagem de marcação para estrutura de páginas web.', 1993),

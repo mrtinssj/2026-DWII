@@ -3,7 +3,7 @@
 $caminho_raiz = '../';
 
 // Incluir a conexão PDO
-require_once 'includes/conexao.php';
+require_once __DIR__ . '/includes/conexao.php';
 
 // Validar o ID recebido via GET — retorna false se não for inteiro válido
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);

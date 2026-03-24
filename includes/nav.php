@@ -47,6 +47,10 @@ function menu_class($item, $atual) {
     <?php echo menu_class("projetos", $pagina_atual); ?>>
       Projetos
   </a>
+  <a href="<?php echo $caminho_raiz; ?>03_pdo/index.php"
+   <?php echo menu_class("catalogo", $pagina_atual); ?>>
+   Catálogo
+  </a>
 
   <!-- Link para o formulário - Aula 04 -->
      <a href="<?php echo $caminho_raiz; ?>02_formularios/contato.php"
