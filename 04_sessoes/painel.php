@@ -1,28 +1,12 @@
 <?php
-/**
- * Disciplina : Desenvolvimento Web II (DWII)
- * Aula       : 06 — Autenticação com sessões e controle de acesso
- * Arquivo    : 04_sessoes/painel.php
- * Autor      : [SEU NOME AQUI]
- */
-
-// --- VERSÃO INICIAL (Passo 2) ---
-// Substituir pelo bloco abaixo no Passo 3 (após criar auth.php)
-
-// session_start();
-
-// if (!isset($_SESSION['usuario'])) {
-//     header('Location: login.php');
-//     exit;
-// }
-
-// --- VERSÃO REFATORADA (Passo 3) – substitui o bloco acima ---
 require_once __DIR__ . '/includes/auth.php';
+
 requer_login();
 
-$titulo_pagina = 'Painel — Área Restrita';
-$caminho_raiz  = '../';
-$pagina_atual  = '';
+$_SESSION['visitas'] = ($_SESSION['visitas'] ?? 0) + 1;
+
+$flash = $_SESSION['flash'] ?? null;
+unset($_SESSION['flash']);
 ?>
 
 <!DOCTYPE html>
@@ -34,17 +18,25 @@ $pagina_atual  = '';
 
 <div class="container">
 
-    <div class="alerta-sucesso">
-        <h3>✅ Você está autenticado!</h3>
-        <p><strong>Usuário:</strong>
-            <?php echo htmlspecialchars($_SESSION['usuario']); ?>
-        </p>
-        <p><strong>Login realizado em:</strong>
-            <?php echo htmlspecialchars($_SESSION['logado_em'] ?? '--'); ?>
+    <?php if ($flash): ?>
+        <div class="alerta-sucesso">
+            <?php echo htmlspecialchars($flash); ?>
+        </div>
+    <?php endif; ?>
+
+    <div class="card">
+        <h2>📊 Painel</h2>
+
+        <p><strong>Usuário:</strong> <?php echo htmlspecialchars($_SESSION['usuario']); ?></p>
+        <p><strong>Login em:</strong> <?php echo $_SESSION['logado_em']; ?></p>
+        <p><strong>Visitas nesta sessão:</strong> <?php echo $_SESSION['visitas']; ?></p>
+
+        <p>
+            <a href="perfil.php">Ir para Perfil</a>
         </p>
     </div>
 
-    <div class="card">
+    <div class="card" style="margin-top: 16px;">
         <h3>📊 Painel de controle</h3>
         <p>Este conteúdo só é visível para usuários autenticados.</p>
         <p>Nas próximas aulas este painel terá funcionalidades reais (CRUD).</p>
